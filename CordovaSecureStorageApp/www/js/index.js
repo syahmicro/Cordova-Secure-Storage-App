@@ -28,6 +28,10 @@ document.addEventListener('deviceready', onDeviceReady, true);
 //     document.getElementById('deviceready').classList.add('ready');
 // }
 function onDeviceReady(){
+      // Cordova is now initialized. Have fun!
+
+    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    document.getElementById('deviceready').classList.add('ready');
     app.receivedEvent('deviceready');
     SecureStorageSwift.echo(
       'Plugin Ready!',
