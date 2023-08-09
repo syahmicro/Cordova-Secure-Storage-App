@@ -17,13 +17,15 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-add-swift-support": {}
+      "cordova-plugin-add-swift-support": {},
+      "com-securestorage-plugins-swift": {}
     },
     "platforms": [
       "ios"
     ]
   },
   "devDependencies": {
+    "com-securestorage-plugins-swift": "file:../../Cordova-Secure-Storage/SecureStorageSwift",
     "cordova-ios": "^7.0.0"
   }
 }
