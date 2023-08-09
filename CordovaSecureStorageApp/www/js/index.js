@@ -21,9 +21,38 @@
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);
 
-function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+// function onDeviceReady() {
+//     // Cordova is now initialized. Have fun!
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+//     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+//     document.getElementById('deviceready').classList.add('ready');
+// }
+function onDeviceReady(){
+    app.receivedEvent('deviceready');
+    modusechoswift.echo(
+      'Plugin Ready!',
+      function(msg) {
+        document
+          .getElementById('deviceready')
+          .querySelector('.received')
+          .innerHTML = msg;
+      },
+      function(err) {
+        document
+          .getElementById('deviceready')
+          .innerHTML = '<p class="event received">' + err + '</p>';
+      }
+    );
+
+    modusechoswift.echojs(
+        'Hello Plugin',
+        function(msg) {
+          document.getElementsByTagName('h1')[0].innerHTML = msg;
+        },
+        function(err) {
+          document.getElementsByTagName('h1')[0].innerHTML = err;
+        }
+      );
+    
 }
+
