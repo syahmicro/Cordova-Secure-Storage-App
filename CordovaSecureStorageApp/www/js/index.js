@@ -29,7 +29,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 // }
 function onDeviceReady(){
     app.receivedEvent('deviceready');
-    modusechoswift.echo(
+    SecureStorageSwift.echo(
       'Plugin Ready!',
       function(msg) {
         document
@@ -44,7 +44,7 @@ function onDeviceReady(){
       }
     );
 
-    modusechoswift.echojs(
+    SecureStorageSwift.echojs(
         'Hello Plugin',
         function(msg) {
           document.getElementsByTagName('h1')[0].innerHTML = msg;
